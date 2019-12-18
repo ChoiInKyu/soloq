@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<!--
+	Retrospect by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>조도관리</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../css/main.css" />
+        <link rel="stylesheet"  href="../css/style2.css">
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <link rel="stylesheet" href="../css/billboard.css">
+        <script src="../js/billboard.js"></script>
+        
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+                <h1><%=user%> 님 환영합니다</h1>
+                <span  class="main_logo"><a href="/">로고(메인페이지 버튼)</a></span>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major special">
+						<h2>일조량 측정 페이지</h2>
+						<p>현재 창문이 닫혀있습니다</p>
+                    </header>
+                    <div id="chart"></div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			 <footer id="footer">
+        <div class="inner">
+            <ul class="copyright">
+                <img src="images/exlogo4.png" alt="" />
+                <li>&copy; KITRI_SF_project.</li><br>
+                <li>PM: <a href="http://unsplash.com">JIN HEE SUNG</a>.</li><br>
+                <li>Member: KIM SAMUEL, KIM YOUNGROK, PARK JONGJIN, LEE SANGJIN, CHOI INKYU  </a>.</li>
+            </ul>
+        </div>
+    </footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script>
+        var chart = bb.generate({
+            data: {
+                x: "x",
+                xFormat: "%Y-%m-%d %H:%M:%S",
+                columns: [
+                    ["x",<%-date%>],
+                    ["조도", <%=illum%>]
+                ]
+            },
+            color: {
+                pattern: [
+                    "#ff7f0e"
+                    ]
+            },
+            axis: {
+                x: {
+                    type: "timeseries",
+                    localtime: true,
+                    tick: {
+                        format: "%Y-%m-%d %H:%M:%S"
+                    }
+                },
+                y: {
+                    label: "조도",
+                    max: 40,
+                    min: -20
+                }
+            },
+            bindto: "#chart"
+        });
+        </script>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/testmain.css">
+</head>
+
+<body>
+    <header id="myHeader">
+        <div>하이<br>
+            제이름은 누구입니다
+        </div>
+    </header>
+    <section>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+        <h1>hello</h1><br>
+    </section>
+    
+
+
+    <footer>bye
+    </footer>
+
+    <!--스티키-->
+    <script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+
+</html>

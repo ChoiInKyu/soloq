@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+	<%- include('./include/head') %>
+	<link rel="stylesheet" href="../../css/style_login.css">
+	<title>로그인</title>
+<head/>
+<body>
+	<form action="/login" class="login-form" method="POST">
+		
+		<h1>SF프로젝트</h1>
+
+		<div class="txtb">
+			<input type="text" name="userId" autocomplete="off" style="font-weight: 600; font-size: 16px;">
+			<span data-placeholder="아이디"></span>
+		</div>
+
+		<div class="txtb">
+			<input type="password" name="userPwd" autocomplete="off">
+			<span data-placeholder="비밀번호"></span>
+		</div>
+
+		<input type="submit" class="logbtn" value="로그인" style="font-size: 18px; font-weight: 500;">
+	</form>
+	<% if(!auth) { %>
+		<script>
+			window.onload = () => {
+				alert("아이디 또는 비밀번호를 다시 확인해주세요","로그인 오류");
+				location.href="/";
+			}
+		</script>
+	<% } %>
+	<script type="text/javascript">	
+		$(".txtb input").on("focus",function(){
+			$(this).addClass("focus");
+		});
+
+		$(".txtb input").on("blur",function(){
+			if($(this).val() == "")
+			$(this).removeClass("focus");
+		});
+	</script>
+
+</body>
+</html>
